@@ -35,7 +35,7 @@ const getHourly = async(lat,long) => {
         //set icon
         document.getElementById("t" + (i+1) + "-icon").src = "icons/" + data.hourly[i].weather[0].icon + ".webp";
         document.getElementById("t" + (i+1) + "-temp").innerHTML = Math.round (data.hourly[i].temp) + "&deg;";
-        document.getElementById("t" + (i+1) + "-perc").innerHTML = '<i class="fa-solid fa-droplet"></i> ' + data.hourly[i].pop * 100 + '%';
+        document.getElementById("t" + (i+1) + "-perc").innerHTML = '<i class="fa-solid fa-droplet"></i> ' + Math.round(data.hourly[i].pop * 100) + '%';
     }
     //UpdateUI(data[0]);
     return data;

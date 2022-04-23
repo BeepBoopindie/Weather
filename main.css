@@ -3,17 +3,17 @@
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
 html, body {
     background-size: cover;
-  }
+}
+
 body{
     height: calc(100vh);
     background-image: linear-gradient(140deg,#1404ba, #E3BEFE);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 
 .weatherbox{
     position: absolute ;
@@ -26,6 +26,7 @@ body{
     padding: 10px;
     color: grey !important;
     overflow-y: hidden;
+    display: block;
 }
 
 .date{
@@ -92,6 +93,7 @@ body{
     height: auto;
 
 }
+
 .temperatures{
     padding-top: 30px;
     text-align: center;
@@ -101,13 +103,13 @@ body{
     color: white;
 }
 
-
 .big{
     line-height: 20px;
     font-weight: bold;
     font-size: 60px;
     text-shadow: 1px 1px 5px black;
 }
+
 .small{
 
     padding-inline: 10px;
@@ -283,4 +285,10 @@ body{
       border-radius: 20px;
       height: 40px;
       background-image: linear-gradient(#1404ba, #f8eeff); 
+  }
+
+.footer{
+      display: block;
+      font-size: 12px;
+      text-align: center;
   }
