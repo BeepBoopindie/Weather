@@ -14,7 +14,7 @@
         <title>Weather Site By Ross Steventon</title>
     </head>
     <body >
-        <div class="header" onload="get_current()">
+        <div class="header">
             <div class="details">
                 <div class="location"><i class="fa-solid fa-location-dot"></i>Thanet</div>
                 <div class="date" id="date">Su, 17 April, 14:01</div>
@@ -122,76 +122,118 @@
                 </div>
                 <div class="boxes">
                     <div class="smallbox">
-                        <span>Wind</span>
-                        <span class="bold">7km/h</span>
+                        <span >Wind</span>   <br/>
+                        <span class="bold" id="windspeed">7km/h</span>
                     </div>
                     <div class="smallbox">
-                        <span>Humidity</span>
-                        <span class="bold">47%</span>
+                        <span>Humidity</span>   <br/>
+                        <span class="bold" id="humidity">47%</span>
                     </div>
                     <div class="smallbox">
                         <span>UV index</span>
-                        <span class="bold">Short</span>
+                        <br/>
+                        <span class="bold" id="uv">Short</span>
                     </div>
                     <div class="smallbox">
-                        <span>AQI</span>
-                        <span class="bold">Middle (56)</span>
+                        <span>Pressure</span>   <br/>
+                        <span class="bold" id="pressure">Middle (56)</span>
                     </div>
                 </div>
 
                 <div class="temprange">
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="0-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="0-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="1-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="1-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="2-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="2-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="3-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="3-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="4-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="4-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="5-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="5-low">9&deg;</span>
                     </div>
                     <div class="temp-box">
-                        <span>18&deg;</span>
+                        <span id="6-high">18&deg;</span>
                         <div class="minmax">
                         </div>
-                        <span>9&deg;</span>
+                        <span id="6-low">9&deg;</span>
                     </div>
                 </div>
+
+                <div class="week">
+                    <div class="day">
+                        <span class="" id="d0-perc"><i class="fa-solid fa-droplet fa-xs"></i> 0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d0-icon"> <br/> 
+                        <span class="bold" id="d0-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d1-perc"><i class="fa-solid fa-droplet fa-xs"></i> 0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d1-icon"><br/> 
+                        <span class="bold" id="d1-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d2-perc"><i class="fa-solid fa-droplet fa-xs"></i> 0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d2-icon"><br/> 
+                        <span class="bold" id="d2-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d3-perc"><i class="fa-solid fa-droplet fa-xs"></i> 0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d3-icon"><br/> 
+                        <span class="bold" id="d3-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d4-perc"><i class="fa-solid fa-droplet fa-xs"></i> 0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d4-icon"><br/> 
+                        <span class="bold" id="d4-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d5-perc"><i class="fa-solid fa-droplet fa-xs"></i> 100%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d5-icon"><br/> 
+                        <span class="bold" id="d5-day">Mo</span>
+                    </div>
+                    <div class="day">
+                        <span class="" id="d6-perc"><i class="fa-solid fa-droplet fa-xs"></i>0%</span><br/> 
+                        <img src="icons/01d.webp" alt="" id="d6-icon"><br/> 
+                        <span class="bold" id="d6-day">Mo</span>
+                    </div>
+                    
+                </div>
+                <img src="" id="map" class="map"></div>
             </div>
+            <br/>
             <div class="footer">Created by Ross Steventon, Design by <a href="https://bit.ly/390nUsj">Marina Pastukhova</a></div>
 
         <script>
 
             function openinfo() {
-              document.getElementById("weatherbox").style.height = "1000px";
+              document.getElementById("weatherbox").style.height = "800px";
             
-              document.body.style.height=  "calc(100vh + 700px)";
+              document.body.style.height=  "calc(100vh + 400px)";
               const d = new Date();
                 let hour = d.getHours();
 
