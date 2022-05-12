@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
-        
         <script src="https://kit.fontawesome.com/ec93bba440.js" crossorigin="anonymous"></script>
 
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -13,16 +11,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather Site By Ross Steventon</title>
     </head>
-    <body >
+    <body>
+        <div id="Mainweather">
         <div class="header">
             <div class="details">
-                <div class="location"><i class="fa-solid fa-location-dot"></i>Thanet</div>
+                <div class="location" id="location" ><i class="fa-solid fa-location-dot"></i>Thanet</div>
                 <div class="date" id="date">Su, 17 April, 14:01</div>
             </div>
             <div class="hamburger" onclick="openNav()"><i class="fa-solid fa-bars fa-2xl"></i></div>
         </div>
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-angle-left fa-xs"></i></a>
+            <div id="" class="sidenav-header">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-angle-left fa-xs"></i></a>
+                <a href="javascript:void(0)" class="addbtn" onclick="opensearch()"><i class="fa-solid fa-plus fa-xs"></i></a>
+            </div>
         </div>
         <div class="weather-icon">
             <img id="cur-icon" src="" alt="">
@@ -118,7 +120,7 @@
                 </div>
                 <br />
                 <div class="button" onclick="openinfo()">
-                    <span>See more</span>
+                    <span id="btn-txt">See More</span>
                 </div>
                 <div class="boxes">
                     <div class="smallbox">
@@ -224,35 +226,44 @@
                     
                 </div>
                 <img src="" id="map" class="map"></div>
-            </div>
+           
             <br/>
             <div class="footer">Created by Ross Steventon, Design by <a href="https://bit.ly/390nUsj">Marina Pastukhova</a></div>
+        </div>
+        <div class="searchscreen" id="search">
+            <a href="javascript:void(0)" class="closebtn" onclick=""><i class="fa-solid fa-angle-left fa-xl"></i></a> <input type="text" placeholder="Enter location" id="locsearch"onchange="getLocation()"></input>
 
-        <script>
+            <div class="searchresult" id="searchresult" >
+                <div class="result" id="sr-0" onclick="selectCity(0)">
+                    <span class="title">City Name</span>
+                    <br/>
+                    <span class="subtitle">Country Name</span>
+                </div>
+                <div class="result" id="sr-1" onclick="selectCity(1)">
+                    <span class="title">City Name</span>
+                    <br/>
+                    <span class="subtitle">Country Name</span>
+                </div>
+                <div class="result" id="sr-2" onclick="selectCity(2)">
+                    <span class="title">City Name</span>
+                    <br/>
+                    <span class="subtitle">Country Name</span>
+                </div>
+                <div class="result" id="sr-3" onclick="selectCity(3)">
+                    <span class="title">City Name</span>
+                    <br/>
+                    <span class="subtitle">Country Name</span>
+                </div>
+                <div class="result" id="sr-4" onclick="selectCity(4)">
+                    <span class="title">City Name</span>
+                    <br/>
+                    <span class="subtitle">Country Name</span>
+                </div>
+                <br />
+            </div>
+        </div>
 
-            function openinfo() {
-              document.getElementById("weatherbox").style.height = "800px";
-            
-              document.body.style.height=  "calc(100vh + 400px)";
-              const d = new Date();
-                let hour = d.getHours();
-
-                if(hour> 6 && hour <= 19){
-                    document.body.style.backgroundImage=  "linear-gradient(140deg,#1404ba, #E3BEFE)"; 
-                }else{
-                    document.body.style.backgroundImage=  "linear-gradient(140deg,#0C0214, #7744CA)"; 
-                }
-            }
-            function openNav() {
-              document.getElementById("mySidenav").style.width = "250px";
-            }
-            
-            function closeNav() {
-              document.getElementById("mySidenav").style.width = "0";
-            }
-
-      
-            </script>
+        </div>
     </body>
 
 </html>

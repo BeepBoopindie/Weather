@@ -9,10 +9,12 @@ html, body {
 }
 
 body{
-    height: calc(100vh);
+    height: auto;
     background-image: linear-gradient(140deg,#1404ba, #E3BEFE);
     background-repeat: no-repeat;
     background-size: cover;
+    transition: height 1s;
+    min-height: 100vh;
 }
 
 .weatherbox{
@@ -27,6 +29,7 @@ body{
     overflow-y: hidden;
     display: block;
     max-width: 500px;
+    transition: height 1s;
 }
 
 .date{
@@ -147,14 +150,24 @@ body{
     box-shadow: 10px 10px 1000px black;
     color: black;
   }
+
+  .sidenav-header{
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      top:0px;
+      overflow-x: hidden;
+    
+  }
   
   .sidenav a {
     padding: 8px 8px 8px 20px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
-    display: block;
+    color: #1404ba;
+    display: inline-block;
     transition: 0.3s;
+    position: relative;
   }
   
   .sidenav a:hover {
@@ -162,14 +175,17 @@ body{
   }
   
   .sidenav .closebtn {
-    position: absolute;
+    position: relative;
     top: 0;
-
     color: black;
   }
 
   .closebtn i{
-      color: darkgray;
+    color: #1404ba;
+  }
+  .addbtn{
+      position: absolute;
+      left: 150px;
   }
 
   .forecast{
@@ -299,6 +315,12 @@ body{
       font-size: 12px;
       text-align: center;
   }
+  .footer a{
+      color: black;
+  }
+  .footer a:hover{
+    color: grey !important;
+}
 
   .map{
       padding-top: 20px;
@@ -324,4 +346,68 @@ body{
       height: 25px;
       object-fit:contain;
   }
+
+  .searchscreen{
+      margin: 0 auto;
+      width: 100vw;
+      text-align: center;
+      display: none;
+  }
+
+  .searchscreen .closebtn i {
+    color:  white !important;
+    padding-right: 25px;
+}
+
+  .searchscreen input[type="text"]
+  {
+      margin-top: 25px;
+      width: 80%;
+      border-radius: 10px;
+      height: 40px;
+      text-indent: 5px;
+      border: none;
+      outline: none;
+      box-shadow: 0px 0px 10px 2px black;
+  }
+
+  .searchresult{
+    display: flex;
+    position: relative;
+    left: 600px;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 95%;
+    min-height: 80px;
+    margin-top: 50px;
+    height: auto;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px black;
+    padding: 10px 0;
+    transition: left 0.5s;
+  }
+
+  .result{
+      margin: 0 auto;
+    padding: 10px 0;
+      text-align: left;
+      width: 80%;
+      height: auto;
+      border-bottom: 1px solid grey;
+  }
+
+  .result .title{
+      font-weight: bold;
+      font-size: 18px;
+  }
+  .result .subtitle{
+    font-size: 12px;
+    color: grey;
+}
+
+.result:hover{
+    background-color: rgba(128, 128, 128, 0.344);
+}
+
 
