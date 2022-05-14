@@ -9,7 +9,7 @@ var _long = "1.3958178";
 const getLocation  = async()  =>{
     console.log("test");
     const location = document.getElementById("locsearch").value;
-    const baseUrl = "http://api.openweathermap.org/geo/1.0/direct?q=";
+    const baseUrl = "https://api.openweathermap.org/geo/1.0/direct?q=";
     const query = `${location}&limit=5&appid=${key}`;
 
     const res = await fetch(baseUrl + query);
