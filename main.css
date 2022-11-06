@@ -1,0 +1,468 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    background-size: cover;
+}
+
+body{
+    height: auto;
+    background-image: linear-gradient(140deg,#1404ba, #E3BEFE);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: height 1s;
+    min-height: 100vh;
+}
+
+.weatherbox{
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    width: 90vw;
+    height: 180px;
+    margin: 0 auto;
+    padding: 10px;
+    color: grey !important;
+    overflow-y: hidden;
+    display: block;
+    max-width: 500px;
+    transition: height 1s;
+}
+
+.date{
+    font-size: 20px;
+}
+.high-temp,.low-temp{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header{
+    padding-inline: 30px;
+    padding-top: 40px;
+    height: 50px;
+    color: white;
+}
+
+.location{
+    font-weight: bold;
+}
+
+.date{
+    font-size: 12px;
+    font-weight: 400;
+    
+}
+
+.location i{
+    padding-right: 10px;
+}
+
+.details{
+    vertical-align: middle;
+    float: left;
+    width: 70%;
+    display: inline-block;
+    
+}
+
+.hamburger{
+    vertical-align: middle;
+    display: inline-block;
+    float:right;
+    padding: 10px;
+}
+
+.weather-icon{
+    width: 100vw;
+    opacity: 0%;
+    transform: translateX(-100%);
+    animation: slide-in 1.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%);opacity: 100%; }
+}
+
+
+.weather-icon img{
+    display: block;
+    margin:  auto;
+    width: 64vw;
+    max-width: 400px;
+    height: auto;
+
+}
+
+.temperatures{
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    font-weight:normal !important;
+    color: white;
+}
+
+.big{
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 60px;
+    text-shadow: 1px 1px 5px black;
+}
+
+.small{
+
+    padding-inline: 10px;
+    font-weight:normal;
+    font-size: 11px;
+    
+}
+
+.shadow{
+    text-shadow: 1px 1px 1px black;
+}
+
+.weatherdesc{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight:normal !important;
+    font-size: 11px; 
+}
+
+
+.sidenav {
+    height: 80%;
+    border-radius: 20px 0px 0 20px;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 10px 10px 1000px black;
+    color: black;
+  }
+
+  .sidenav-header{
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      top:0px;
+      overflow-x: hidden;
+    
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1404ba;
+    display: inline-block;
+    transition: 0.3s;
+    position: relative;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: relative;
+    top: 0;
+    color: black;
+  }
+
+  .closebtn i{
+    color: #1404ba;
+  }
+  .addbtn{
+      position: absolute;
+      left: 150px;
+  }
+
+  .forecast{
+      padding-left:4px;
+    margin-top: 5px;
+    justify-content: space-evenly;
+    overflow: scroll;
+    height: 130px;
+    white-space:normal;
+  }
+
+  .scrollarea{
+      width: 720px;
+      height: 110px;
+  }
+
+
+  .timeslot{
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+    color: darkgray;
+    width: 60px;
+    height: 98%;
+    display: inline-block;
+    border-radius: 10px;
+  }
+
+  .timeslot img{
+      width: 100% ;
+      height: 30px;
+      object-fit: scale-down;
+
+  }
+
+  .bold{
+      font-weight: bold !important
+  }
+  .active{
+
+    box-shadow: 0px 0px 4px 1px grey;
+
+  }
+
+  .button{
+      position: absolute;
+      left: calc(50% - 50px);
+      bottom: 10px;
+      display: block;
+      margin:  auto;
+      background-color: lightgray;
+      width: 100px;
+      height: 20px;
+      border-radius: 20px;
+      color: black;
+      text-align: center;
+      padding: 2px;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 20px;
+  }
+
+  .button:hover{
+    background-color: gray;
+  }
+
+  .button span{
+
+    margin: 0 auto;
+  }
+
+
+  .boxes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+      width: 100%;
+      padding-top: 50px;
+  }
+
+  .smallbox{
+      color: black;
+      text-align: center;
+      padding-top: 10px;
+      width: 60px;
+      height: 50px;
+      box-shadow: 1px 1px 6px grey;
+      border-radius: 10px;
+      margin-right: 10px;
+      font-size: 12px;
+  }
+
+  .temprange, .week{
+    padding-top: 60px;
+    width: 100%;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  .week{
+      padding-top: 10px;
+  }
+
+  .temp-box{
+      display: inline-block;
+
+    width: auto;
+    height: 100px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .minmax{
+      margin: 0 auto;
+      content: "";
+      width: 8px;
+      border-radius: 20px;
+      height: 40px;
+      background-image: linear-gradient(#1404ba, #f8eeff); 
+      margin: 3px auto;
+  }
+
+.footer{
+      display: block;
+      font-size: 12px;
+      text-align: center;
+  }
+  .footer a{
+      color: black;
+  }
+  .footer a:hover{
+    color: grey !important;
+}
+
+  .map{
+      padding-top: 20px;
+      max-width: 100%;
+  }
+
+  .day{
+    display: inline-block;
+    width: min-content;
+    text-align: center;
+    width: auto;
+  }
+
+  .day span{
+    margin: 0 auto;
+    font-size: 12px;
+  }
+
+  .day img{
+      padding-top: 5px;
+      width: 25px;
+      margin: 0 auto;
+      height: 25px;
+      object-fit:contain;
+  }
+
+  .searchscreen{
+      margin: 0 auto;
+      width: 100vw;
+      text-align: center;
+      display: none;
+  }
+
+  .searchscreen .closebtn i {
+    color:  white !important;
+    padding-right: 25px;
+}
+
+  .searchscreen input[type="text"]
+  {
+      margin-top: 25px;
+      width: 80%;
+      border-radius: 10px;
+      height: 40px;
+      text-indent: 5px;
+      border: none;
+      outline: none;
+      box-shadow: 0px 0px 10px 2px black;
+  }
+
+  .searchresult{
+    display: flex;
+    position: relative;
+    left: 4000px;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 95%;
+    min-height: 80px;
+    margin-top: 50px;
+    height: auto;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px black;
+    padding: 10px 0;
+    transition: left 0.5s;
+  }
+
+  .result{
+      margin: 0 auto;
+    padding: 10px 0;
+      text-align: left;
+      width: 80%;
+      height: auto;
+      border-bottom: 1px solid grey;
+  }
+
+  .result .title{
+      font-weight: bold;
+      font-size: 18px;
+  }
+  .result .subtitle{
+    font-size: 12px;
+    color: grey;
+}
+
+.result:hover{
+    background-color: rgba(128, 128, 128, 0.344);
+}
+
+@media only screen and (min-width:650px) {
+  .weatherbox{
+    max-width: 1000px;
+  }
+
+  .forecast{
+    overflow: hidden !important;
+    height: 120px;
+    margin-bottom: 10px !important; 
+}
+
+.scrollarea{
+    width: 100% !important;
+    height: 180px !important;
+    display: flex;
+    justify-content: space-evenly !important;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+
+.timeslot{
+  margin-top: 10px;
+  text-align: center;
+  float: left;
+  color: darkgray;
+  width: 60px;
+  height: 98%;
+  display: inline !important;
+  border-radius: 10px;
+}
+
+.smallbox{
+  width: 20%;
+}
+
+.temprange, .week
+{
+  margin: 0 auto;
+  width: 80%;
+}
+
+.mapcontainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map{
+  margin:0 auto !important;
+}
+
+
+}
+
